@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="//img.alicdn.com/tfs/TB13g4aqXP7gK0jSZFjXXc5aXXa-32-32.ico"
+    />
+    <!-- 这是引入我们将要编辑的css样式表 -->
+    <link rel="stylesheet" href="./dist/goodcart.css" />
+    <title>购物车</title>
+  </head>
+  <body>
+    <!-- 顶部导航栏 -->
+    <div id="topNav">
+      <!-- nav标签用来定义导航链接的部分 -->
+      <nav>
+        <!-- 根据刚才第一步的分析可以知道这是一个水平导航栏，我们可以采用ul > li 的格式来建立一个导航栏列表 -->
+        <!-- 这里定义一个类名为Nav方便之后用CSS以类名Nav所在的标签为父级标签对导航栏进行样式操作 -->
+        <ul class="Nav">
+          <li>考拉欢迎你！</li>
+          <li><a href="login.html" class="logintarget">登录</a></li>
+          <li><a href="regdit.html" class="logintarget">免费注册</a></li>
+          <li><a>手机考拉</a></li>
+          <li><a>每日签到</a></li>
+          <li><a>我的订单</a></li>
+          <li>
+            <a>个人中心<i></i></a>
+            <!-- 这里面有个类名为personalCenter的div标签，取名为该类名的原因是，该类名中文翻译为个人中心 -->
+            <!-- 这个div标签是嵌套在li里面的，之后用于表示二级下拉菜单栏 -->
+            <div class="personalCenter">
+              <a href="">我的优惠券</a>
+              <a href="">我的红包</a>
+              <a href="">我的考拉豆</a>
+              <a href="">帐号管理</a>
+              <a href="">我的实名认证</a>
+              <a href="">我的发票抬头</a>
+              <a href="">我收藏的商品</a>
+              <a href="">我关注的品牌</a>
+              <a href="">售后管理</a>
+            </div>
+          </li>
+          <li>
+            <a>客户服务<i></i></a>
+            <!-- 这里面有个类名为customerService的div标签，取名为该类名的原因是，该类名中文翻译为客服服务 -->
+            <!-- 这个div标签是嵌套在li里面的，之后用于表示二级下拉菜单栏 -->
+            <div class="customerService">
+              <a href="">联系客服</a>
+              <a href="">帮助中心</a>
+              <a href="">知识产权保护</a>
+              <a href="">规则中心</a>
+            </div>
+          </li>
+          <li>
+            <a>充值中心<i></i></a>
+            <!-- 这里面有个类名为payCenter的div标签，取名为该类名的原因是，该类名中文翻译为支付中心 -->
+            <!-- 这个div标签是嵌套在li里面的，之后用于表示二级下拉菜单栏 -->
+            <div class="payCenter">
+              <a href="">话费充值</a>
+              <a href="">游戏充值</a>
+              <a href="">AppStore充值卡</a>
+            </div>
+          </li>
+          <li>
+            <a>消费者权益<i></i></a>
+            <!-- 这里面有个类名为consumesInterests的div标签，取名为该类名的原因是，该类名中文翻译为消费者权益 -->
+            <!-- 这个div标签是嵌套在li里面的，之后用于表示二级下拉菜单栏 -->
+            <div class="consumesInterests">
+              <a href="">消费者告知书</a>
+            </div>
+          </li>
+          <li>
+            <a>更多<i></i></a>
+            <!-- 这里面有个类名为more的div标签，取名为该类名的原因是，该类名中文翻译为更多 -->
+            <!-- 这个div标签是嵌套在li里面的，之后用于表示二级下拉菜单栏 -->
+            <div class="more">
+              <a href="">收藏本站</a>
+              <a href="">新浪微博</a>
+              <a href="">微信公众号</a>
+              <a href="">招商合作</a>
+            </div>
+          </li>
+          <li><a>视频内容</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="container">
+      <!-- 图标栏 -->
+      <div class="searchBar">
+        <a href=""><img src="./img/logo.png" alt="" /></a>
+      </div>
+
+      <!-- 购物车内容区域 -->
+      <div class="cartbox">
+          
+        <h3 class="m-mycart" _pi="14">
+          <span class="tt" _pi="14">我的购物车 1</span>
+          <span class="addrbox f-fr" id="address" _pi="14">
+            <label class="addrlabel" _pi="14">配送至</label>
+          </span>
+        </h3>
+
+        <div class="head f-cb">
+          <div class="col col1">
+            <input
+              type="checkbox"
+              id="selectAll"
+              name="selectAll"
+              class="u-chk"
+            />
+            <label class="lab" for="selectAll">全选</label>
+          </div>
+          <div class="col col2" _pi="20">商品信息</div>
+          <div class="col col3" _pi="20">单价(元)</div>
+          <div class="col col4" _pi="20">数量</div>
+          <div class="col col5" _pi="20">金额(元)</div>
+          <div class="col col6" _pi="20">操作</div>
+        </div>
+
+        <div class="m-cart">
+          <!-- <div class="ware">
+                    <input type="checkbox" name="cartAll" class="u-chk">
+                   <b class="u-cartlabel">自营</b>
+                    <strong class="warename">自营保税仓</strong>
+                  </div>  -->
+          <!-- 此处渲染数据 -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部官方信息 -->
+    <div class="aboutLinks">
+      <div class="provide">
+        <ul class="zdty">
+          <li>
+            <span class="cricle">正</span
+            ><span>
+              <h2>正品承诺</h2>
+              <p>正品保障 假一赔十</p>
+            </span>
+          </li>
+          <li>
+            <span class="cricle">低</span
+            ><span>
+              <h2>低价保障</h2>
+              <p>缩减中间环节 确保低价</p>
+            </span>
+          </li>
+          <li>
+            <span class="cricle">退</span
+            ><span>
+              <h2>30天无忧退货</h2>
+              <p>国内退货 售后无忧</p>
+            </span>
+          </li>
+          <li>
+            <span class="cricle">邮</span
+            ><span>
+              <h2>满88包邮</h2>
+              <p>部分特殊商品除外</p>
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div class="bottomInfo">
+        <ul>
+          <li>
+            <div class="aboutImg" src="img\aboutImg.png" alt=""></div>
+            <div class="aboutUs">
+              <span class="subscribeUs">关注我们</span>
+              <span class="weibo">
+                <div class="tipImg1">
+                  <i></i>
+                  <div></div>
+                </div>
+              </span>
+              <span class="weixin">
+                <div class="tipImg2">
+                  <i></i>
+                  <div></div>
+                </div>
+              </span>
+            </div>
+          </li>
+          <li>
+            <dl>
+              <dt>考拉保障</dt>
+              <a href="#">
+                <dd>假一赔十</dd>
+              </a>
+              <a href="#">
+                <dd>廉正举报</dd>
+              </a>
+              <a href="#">
+                <dd></dd>
+              </a>
+              <a href="#">
+                <dd></dd>
+              </a>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>新手指南</dt>
+              <a href="#">
+                <dd>购物流程</dd>
+              </a>
+              <a href="#">
+                <dd>支付方式</dd>
+              </a>
+              <a href="#">
+                <dd>通关税费</dd>
+              </a>
+              <a href="#">
+                <dd>常见问题</dd>
+              </a>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>售后服务</dt>
+              <a href="#">
+                <dd>售后政策</dd>
+              </a>
+              <a href="#">
+                <dd>退货流程</dd>
+              </a>
+              <a href="#">
+                <dd>特色服务</dd>
+              </a>
+              <a href="#">
+                <dd>联系客服</dd>
+              </a>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>物流配送</dt>
+              <a href="#">
+                <dd>配送方式</dd>
+              </a>
+              <a href="#">
+                <dd>配送服务</dd>
+              </a>
+              <a href="#">
+                <dd>运费标准</dd>
+              </a>
+              <a href="#">
+                <dd>物流跟踪</dd>
+              </a>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>商家服务</dt>
+              <a href="#">
+                <dd>招商合作</dd>
+              </a>
+              <a href="#">
+                <dd>销售联盟</dd>
+              </a>
+              <a href="#">
+                <dd>商家成长</dd>
+              </a>
+              <a href="#">
+                <dd>物流跟踪</dd>
+              </a>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>关于我们</dt>
+              <a href="#">
+                <dd>联系我们</dd>
+              </a>
+              <a href="#">
+                <dd>CEO邮箱</dd>
+              </a>
+              <a href="#">
+                <dd>线下店</dd>
+              </a>
+              <a href="#">
+                <dd></dd>
+              </a>
+            </dl>
+          </li>
+          <li>
+            <div style="position: relative; margin-left: 40px">
+              <img
+                style="width: 108px; height: 108px; margin-top: 16px ;"
+                src="./img/手机二维码.png"
+                alt=""
+              />
+              <span
+                style="
+                  position: absolute;
+                  top: 130px;
+                  transform: translateX(12px);
+                "
+                >扫描下载手机版</span
+              >
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <br />
+      <p>隐私政策 - 考拉海购</p>
+      <p>
+        增值电信业务经营许可证：浙B2-20160288 自营经营者信息
+        （浙）网械平台备字[2018]第00007号
+      </p>
+      <p class="gonganInfo">
+        <img src="./img/警徽.png" alt="" /><span>
+          浙公网安备 33010802002216号
+          阿里巴巴版权所有©2003-2020互联网药品信息服务资格证书编号（浙）-2017-0027
+          浙ICP备16011229号</span
+        >
+      </p>
+      <p class="Img">
+        <img src="./img/可信网站.png" alt="" /><img
+          src="./img/备案.png"
+          alt=""
+        />
+      </p>
+      <br />
+    </footer>
+
+    <script type="module">
+      import ShopCart from "./js/GoodCart.js";
+
+      let Id = getCookie("Id");
+      let goodsArrList, goodsArr;
+
+      if (!Id) {
+        let shopCart = new ShopCart("");
+        shopCart.appendTo("#container");
+      } else {
+        ajax({ Id: Id }, "login");
+      }
+
+      function getCookie(name) {
+        var arr1 = document.cookie.split(";"); //多个cookie值是以;分隔的，用split把cookie分割开并赋值给数组
+        for (var i = 0; i < arr1[i].length; i++) {
+          var arr2 = arr1[i].split("=");
+          if (arr2[0] == name) {
+            //如果数组的属性名等于传进来的name
+            return arr2[1]; //就返回属性名对应的值
+          }
+          return ""; //没找到就返回空
+        }
+      }
+
+      function ajax(data, type) {
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener("load", loadHandler);
+        xhr.open("POST", "http://10.9.72.237:4001/" + type);
+        xhr.send(JSON.stringify(data));
+      }
+
+      function loadHandler(e) {
+        var xhr = e.currentTarget;
+        var res = JSON.parse(xhr.response);
+
+        if (res.type === "login") {
+          goodsArr = res.goodsArr ? JSON.parse(res.goodsArr) : "";
+          goodsArr = goodsArr.length > 0 ? goodsArr : "";
+          goodsArrList = new ShopCart(goodsArr, postData);
+          goodsArrList.appendTo("#container");
+          if (goodsArr === "") return;
+        }
+      }
+
+      function postData(_data) {
+        var data = {
+          Id: Id,
+          goodsArr: _data,
+        };
+        ajax(data, "shopCart");
+      }
+    </script>
+  </body>
+</html>
